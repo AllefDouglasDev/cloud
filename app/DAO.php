@@ -1,8 +1,7 @@
 <?php 
 try {
-	$pdo = new PDO("mysql:host=localhost; dbname=sicap", "root", ""); // Banco local
-	//$pdo = new PDO("mysql:host=localhost; port=8080; dbname=u637293318_bd", "u637293318_sicap", "2TaiyjcSpaQ0oggZEM"); // Banco online
-	//$pdo = new PDO("pgsql:host=pgsql.sicapsolucoes.com.br dbname=sicapsolucoes61 port=5432 user=sicapsolucoes61 password=d142e3m4f5c6g7g8");
+	$pdo = new PDO("mysql:host=localhost; dbname=drive", "root", ""); // Banco local
+	
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 } catch(PDOException $e) {}
