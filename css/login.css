@@ -1,0 +1,63 @@
+body {
+    background-color: #34495e;
+}
+
+.my_form {
+    margin-top: 10rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px -2px rgba(0, 0, 0, .7);
+}
+
+.form-control {
+    padding: 2rem;
+}
+
+.form-control:first-of-type {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-control:last-of-type {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.campo-email {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.btn-login {
+    background-color: #34495e;
+}
+
+.btn-cadastrar {
+    background-color: #34495e;
+}
+
+.btn-rec-senha {
+    margin-top: 2rem;
+    background-color: #34495e;
+}
+
+.btn-redef-senha {
+    margin-top: 2rem;
+    background-color: #34495e;
+}
+
+.links {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#retorno {
+    margin-top: 1rem;
+}
+
+#resposta {
+    margin-top: 1rem;
+}

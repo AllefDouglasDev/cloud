@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="icon" href="img/cropped-favicon-32x32.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/cropped-favicon-32x32.png" type="image/x-icon" />
+
+	<title>Login</title>
+
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<!--Menu-->
+
+<div class="container">
+	<form method="POST" class="col-lg-4 col-lg-offset-4 my_form">
+		<img src="img/logo_150x117.png" class="center-block" alt="logo parzivalad">
+		
+		<h2 class="text-center">Entrar</h2>
+		<label for="login" class="sr-only">Email:</label>
+		<input class="form-control input-lg" type="email" name="login" id="login" placeholder="E-mail:" required autofocus>
+		<label for="senha" class="sr-only">Senha:</label>
+		<input class="form-control input-lg" type="password" name="senha" id="senha" placeholder="Senha" required>
+		
+		<div id="retorno"> </div>
+		
+		<div class="row links">
+			<div class="col-md-6">
+				<a href="cadastrar.html" class="ponto"> Cadastrar-se</a>
+			</div>
+			<div class="col-md-6">
+				<a href="esqueciSenha.html"> Esqueci minha senha</a>
+			</div>
+		</div>
+
+		<button class="btn btn-lg btn-block btn-primary btn-login" type="submit" id="btnEntrar" name="btnEntrar"><span class="glyphicon glyphicon-log-in"></span> Entrar</button>
+	</form>		
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
+
+

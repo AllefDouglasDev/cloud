@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="icon" href="img/cropped-favicon-32x32.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/cropped-favicon-32x32.png" type="image/x-icon" />
+
+	<title>Recuperar senha</title>
+
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+
+</head>
+<body>
+<!--Menu-->
+
+<div class="container">
+	<form method="POST" class="col-lg-4 col-lg-offset-4 my_form">
+		<img src="img/logo.png" class="center-block" alt="logo sicap">
+	
+		<h2 class="text-center">Redefinir senha</h2>
+		<label for="senha1">Senha:</label>
+		<input type="password" name="senha1" id="senha1" class="form-control input-lg" required autofocus/>
+		<label for="senha2">Confirmar Senha:</label>
+		<input type="password" name="senha2" id="senha2" class="form-control input-lg" required/>
+		
+		<div id="retorno"> </div>
+		
+		<button class="btn btn-primary btn-lg btn-block btn-redef-senha" id="esqueciSenha">Alterar senha</button>
+	</form>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/recuperarSenha.js"></script>
+
+</body>
+</html>

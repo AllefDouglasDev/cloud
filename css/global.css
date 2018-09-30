@@ -1,0 +1,54 @@
+.table tr:hover {
+	background-color: rgb(228, 229, 230);
+}
+
+.bar {
+	width: 100%;
+	background-color: #eee;
+	padding: 3px;
+	margin-bottom: 10px;
+	box-shadow: inset 0 1px 3px rgba(0,0,0, .2);
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+
+.bar-fill {
+	height: 20px;
+	display: block;
+	background-color: blue;
+	width: 0%;
+	border-radius: 3px;
+	transition: width 0.8s ease;
+}
+
+.bar-fill-text {
+	text-align: center;
+	color: #fff;
+	padding: 3px;
+}
+
+.listaUsuarios {
+	padding-left: 5px;
+}
+
+.ponto {
+	cursor:pointer;
+	text-decoration:none; 
+}
+
+.linha-pt-arq {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.linha-pt-arq:hover {
+	background-color: rgb(228, 229, 230);
+} 
+
+#btn-m-criar-p {
+	display: none;
+}
+
+#btn-m-fazer-up {
+	display: none;
+}

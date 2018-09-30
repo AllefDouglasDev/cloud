@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+
+	<link rel="icon" href="img/cropped-favicon-32x32.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/cropped-favicon-32x32.png" type="image/x-icon" />
+
+	<title>Cadastrar-se</title>
+	<meta name="description" content="PHP OO">
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="Allef Douglas">
+
+	<meta http-quiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+
+</head>
+<body>
+
+<div class="container">
+	<form class="col-lg-4 col-lg-offset-4 my_form">
+		<img src="img/logo_150x117.png" class="center-block" alt="logo sicap">
+
+		<h2 class="text-center">Cadastrar-se</h2>
+		<label for="nome" class="sr-only">Nome:</label>
+		<input type="text" name="nome" id="nome" placeholder="Nome:" class="form-control input-lg" required autofocus>
+		<label for="login" class="sr-only">Email:</label>
+		<input type="email" name="login" id="login" placeholder="E-mail:" class="form-control input-lg campo-email" required>
+		<label for="senha" class="sr-only">Senha:</label>
+		<input type="password" name="senha" id="senha" placeholder="Senha:" class="form-control input-lg" required>
+
+		<div id="resposta"> </div>
+
+		<div class="links"><a href="index.html" class="ponto">Fazer login</a></div>
+		<button type="submit" name="btnCadastrarUsuario" id="btnCadastrarUsuario" class="btn btn-lg btn-block btn-primary btn-cadastrar"><span class="glyphicon glyphicon-user"></span> Cadastrar</button>
+	</form>
+</div><!--Container-->
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/cadastrar.js"></script>
+</body>
+</html>

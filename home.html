@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-quiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<link rel="icon" href="img/cropped-favicon-32x32.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="img/cropped-favicon-32x32.png" type="image/x-icon" />
+
+	<title>ParzivalAD Cloud</title>
+
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+
+	<link rel="stylesheet" type="text/css" href="css/global.css">
+	<link rel="stylesheet" href="css/pasta.css">
+	<link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+<div id="mouse">
+<!--MENU SUPERIOR-->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="home.html">ParzivalAD</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="home.html">Início</a></li>	
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a id='logar' name="sair" class="ponto" onclick="sair()"><span class="glyphicon glyphicon-log-in"></span> Sair</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+<!--MENU SUPERIOR-->
+
+<!--MENU LATERAL E PASTAS-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2"> 
+				<!--Botões laterais-->
+				<input type="button" id="btnMeuDrive" onclick="listarConteudo(null)" class="btn btn-default input-lg btn-block" value="Meu Drive">
+				<input type="button" id="btnComp" onclick="listarCompartilhado()" class="btn btn-default input-lg btn-block" value="Compartilhados">	
+			</div>
+
+			<div class="col-md-10">
+				<!-- Caminho percorrido pelo usuário -->	
+				<div id="caminho"> </div>
+
+				<!-- Imprimindo pastas -->		
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<span id="title-pastas">Pastas e Arquivos</span> 
+							<span id="title-pastas">
+								<a class="btn btn-default" id="btn-m-criar-p" data-toggle='modal' data-target='#modal-criar-pasta'>Criar Pasta</a>
+								<a class="btn btn-default" id="btn-m-fazer-up" href="" data-toggle='modal' data-target='#modal-upload'>Fazer Upload</a>
+							</span>
+						</h3>
+					</div>
+
+					<div class="panel-body">
+						<table class="table hover">
+							<tbody id="pasta">
+								<tr>
+									<td class="text-center"><label for="btnMeuDrive">Bem-Vindo ao SICAP Drive</label></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>	
+		</div>	<!--Row-->
+	</div> <!-- Container -->
+<!--MENU LATERAL E PASTAS-->
+
+<!--MODAL FAZER UPLOAD-->
+	<div class="modal t-modal primary animated jackInTheBox" id="modal-upload">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title">Upload de arquivos</h4>
+				</div>
+				<div class="modal-body">
+					<form action="upload.php" method="post" enctype="multipart/form-data" id="upload">
+						<label class="btn btn-default btn-file btn-start" id="labelArquivos">
+							Selecionar arquivos<input type="file" id="file" name="file[]" class="form-control input-lg" style="display: none;" required multiple>
+						</label>
+						
+						<input type="submit" id="submit" name="submit" value="Iniciar" class="btn btn-info btn-start">
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="bar">
+									<span class="bar-fill" id="pb"><span class="bar-fill-text" id="pt">0%</span></span>
+								</div>
+							</div> <!--Col md 12 -->
+						</div> <!-- Row -->
+
+						<div class="row">
+							<div class="col-md-12">
+								<div id="uploads" class="uploads"> </div>
+							</div>  <!--Col md 12 -->
+						</div> <!-- Row -->
+					</form>	
+				</div>
+			</div>
+		</div>
+	</div>
+<!--MODAL FAZER UPLOAD-->
+
+<!--MODAL CRIAR PASTA-->
+	<div class="modal t-modal primary animated jackInTheBox" id="modal-criar-pasta">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title">Criar pasta</h4>
+				</div>
+				<div class="modal-body">
+					<form action=''>								
+						<p><input type='text' placeholder='Nome da pasta' class='form-control' id='txtNome' required autofocus></p>
+						<p><input type='submit' value='Criar pasta' class='btn btn-primary' id='btnCriarPasta' data-dismiss="modal"></p>
+					</form>	
+				</div>
+			</div>
+		</div>
+	</div>
+<!--MODAL CRIAR PASTA-->
+
+<!--MODAL COMPARTILHAR PASTA-->
+	<div class="modal t-modal primary animated jackInTheBox" id="modal-mensagem">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title">Compartilhar com quem?</h4>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" class="pastaCompartilhada">
+					<table class="table hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Nome</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							<tbody id="usuarios"> </tbody>
+					</table>
+					<a class='ponto' id="removerComp" onclick='listarUsuariosCompartilhados()' data-toggle='modal' data-dismiss="modal" data-target='#modal-remover-compartilhados'>REMOVER COMPARTILHAMENTO</a>
+				</div>
+				<div class="modal-footer">
+					<button id="btnModal" onclick="compartilhar()" type="button" class="btn btn-default" data-dismiss="modal">Compartilhar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--MODAL COMPARTILHAR PASTA-->
+
+<!--MODAL COMPARTILHAR ARQUIVO-->
+	<div class="modal t-modal primary animated jackInTheBox" id="modal-comp-arquivo">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title">Compartilhar com quem?</h4>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" class="arquivoCompartilhado">
+					<table class="table hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Nome</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							<tbody id="usuariosArq"> </tbody>
+					</table>
+					<a class='ponto' id="removerCompArq" onclick='listarUsuariosCompartilhados()' data-toggle='modal' data-dismiss="modal" data-target='#modal-remover-compartilhados-arquivos'>REMOVER COMPARTILHAMENTO</a>
+				</div>
+				<div class="modal-footer">
+					<button id="btnModal" onclick="compartilharArquivo()" type="button" class="btn btn-default" data-dismiss="modal">Compartilhar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--MODAL COMPARTILHAR ARQUIVO-->
+
+<!--MODAL REMOVER COMPARTILHADOS PASTA-->
+	<div class="modal t-modal primary animated jackInTheBox" id="modal-remover-compartilhados">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title">Usuários que compartilham essa pasta</h4>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" class="pastaCompartilhada">
+					<table class="table hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Nome</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							<tbody id="usuariosComp"> </tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button id="btnModal" onclick="removerCompartilhamento()" type="button" class="btn btn-default" data-dismiss="modal">Remover</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--MODAL REMOVER COMPARTILHADOS PASTA-->
+
+<!--MODAL REMOVER COMPARTILHADOS ARQUIVO-->
+	<div class="modal t-modal primary animated jackInTheBox" id="modal-remover-compartilhados-arquivos">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title">Usuários que compartilham esse arquivo</h4>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" class="arquivoCompartilhado">
+					<table class="table hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Nome</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							<tbody id="usuariosCompArq"> </tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button id="btnModal" onclick="removerCompartilhamentoArq()" type="button" class="btn btn-default" data-dismiss="modal">Remover</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--MODAL REMOVER COMPARTILHADOS ARQUIVO-->
+</div>
+
+<!--JAVASCRIPT-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/pastas.js"></script>
+	<script src="js/upload.js"></script>
+	<script src="js/usuarios.js"></script>
+<!--JAVASCRIPT-->
+</body>
+</html>

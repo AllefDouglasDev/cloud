@@ -1,0 +1,16 @@
+.nomePasta {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    text-align: center;
+    padding-left:-60px;
+    margin-left: -60px;
+    text-decoration:none;
+}
+
+.imgPasta {
+    width: 20px;
+}
+
+.imgArquivo {
+    width: 25px;
+}
