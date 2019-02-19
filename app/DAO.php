@@ -94,7 +94,7 @@ function enviarEmail($email, $token){ // Esse método envia um email para altera
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 	$headers .= "De:". $from;
 
-	$message = "<html><head><title>Esqueci minha senha</title></head><body><a href='sicapsolucoes.net/recuperarSenha.html?token=".$token."'>Clique para atualizar senha</a></body></html>";
+	$message = "<html><head><title>Esqueci minha senha</title></head><body><a href='localhost:8000/recuperarSenha.html?token=".$token."'>Clique para atualizar senha</a></body></html>";
 
 	return mail($to, $subject, $message, $headers);
 }
