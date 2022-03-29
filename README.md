@@ -1,10 +1,8 @@
 # ParzivalAd Cloud
 
-# português
-
 Cloud estilo Google Drive e One Drive pessoal, onde usuários podem criar pastas, enviar arquivos e compartilhar com outros usuários
 
-As tecnologias usadas para desenvolvimento foram:
+## As tecnologias usadas para desenvolvimento foram:
 
 HTML, CSS, JavaScript, JQuery, Bootstrap, PHP e MySQL.
 
